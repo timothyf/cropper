@@ -15,9 +15,8 @@
       <tr>
         <th scope="row"><%= user.id %></th>
         <td><%= link_to user.name, user %></td>
-        <td><%= image_tag user.thumbnail('50x50') if user.avatar.attached? %></td>
-        <td>  <%= link_to "Delete", user, method: :delete, confirm: "Are you sure?" %>
-</td>
+        <td><%= link_to(image_tag(user.thumbnail('50x50')), user) if user.avatar.attached? %></td>
+        <td>  <%= link_to "Delete", user, method: :delete, confirm: "Are you sure?" %></td>
       </tr>
     <% end %>
   </tbody>
