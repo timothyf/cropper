@@ -3,7 +3,13 @@
   <%= @user.name %>
 </p>
 <p>
-  <%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+  <%= image_tag @user.thumbnail if @user.avatar.attached? %>
+</p>
+<p>
+  <%= image_tag @user.cropped_avatar if @user.avatar.attached? %>
+</p>
+<p>
+  <%= image_tag @user.avatar if @user.avatar.attached? %>
 </p>
 <p>
   <%= link_to "Edit", edit_user_path(@user) %> |

@@ -35,7 +35,6 @@ gem 'seed-fu', '~> 2.3'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'aws-sdk-s3' #used for digital ocean integration
 gem 'mini_magick'
-gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
