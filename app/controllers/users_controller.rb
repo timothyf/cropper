@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
+
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new
@@ -25,11 +28,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(allowed_params)
       if params[:user][:avatar].present?
         render :crop
@@ -42,13 +43,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user.avatar.purge
     @user.destroy
     redirect_to users_url, notice: "Successfully destroyed user."
   end
-  
+
   private
-  
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def allowed_params
     params.require(:user).permit!
   end

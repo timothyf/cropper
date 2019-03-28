@@ -1,18 +1,33 @@
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-<p>
-  <%= image_tag @user.thumbnail if @user.avatar.attached? %>
-</p>
-<p>
-  <%= image_tag @user.cropped_avatar if @user.avatar.attached? %>
-</p>
-<p>
-  <%= image_tag @user.avatar if @user.avatar.attached? %>
-</p>
+<h2><%= @user.name %></h2>
 <p>
   <%= link_to "Edit", edit_user_path(@user) %> |
   <%= link_to "Destroy", @user, method: :delete, confirm: "Are you sure?" %> |
   <%= link_to "View All", users_path %>
 </p>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Variant</th>
+      <th scope="col">Size</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row">Thumbnail</th>
+        <td><%= @user.thumbnail.variation.transformations[:resize]%></td>
+        <td><%= image_tag @user.thumbnail if @user.avatar.attached? %></td>
+      </tr>
+      <tr>
+        <th scope="row">Cropped</th>
+        <td><%= @user.cropped_avatar.variation.transformations[:crop]%></td>
+        <td><%= image_tag @user.cropped_avatar if @user.avatar.attached? %></td>
+      </tr>
+      <tr>
+        <th scope="row">Original</th>
+        <td><%= @user.avatar.metadata['width']%> x <%= @user.avatar.metadata['height']%></td>
+        <td><%= image_tag @user.avatar if @user.avatar.attached? %></td>
+      </tr>
+  </tbody>
+</table>

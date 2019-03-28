@@ -1,11 +1,9 @@
 class User < ApplicationRecord
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
-  #after_update :crop_avatar
-
   has_one_attached :avatar
-
   before_save :check_cropping
+
 
   def check_cropping
     self.crop_settings = {x: crop_x, y: crop_y, w: crop_w, h: crop_h} if cropping?
@@ -42,18 +40,6 @@ class User < ApplicationRecord
         avatar.variant(resize: size).processed
       end
     end
-  end
-
-
-  # def crop_avatar
-  #   avatar.recreate_versions! if crop_x.present?
-  # end
-
-  private
-
-  def delete_avatar
-    self.avatar = nil
-    self.save
   end
 
 end
