@@ -19,3 +19,35 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+*.sql.gz
+*.swp
+.DS_Store
+.bundle
+.byebug_history
+.env
+.env.test
+.idea
+.todo
+coverage
+coverage.data
+db/dump.sql
+doc/plugins/**/*
+doc/diagrams/**/*.png
+docker.env
+info
+log
+mkmf.log
+nohup.out
+postgres_data/**
+rerun.txt
+tmp/*
+tmp/**/*
+vendor/cache
+vendor/cache/*
+vendor/ruby
+/log
+/storage
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
