@@ -8,32 +8,14 @@ gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-ge
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
-gem 'devise'
-gem 'activeadmin'
-gem 'seed-fu', '~> 2.3'
-gem 'acts-as-taggable-on', '~> 6.0'
-gem 'aws-sdk-s3' #used for digital ocean integration
 gem 'mini_magick'
 gem 'carrierwave'
 
@@ -60,6 +42,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
-\
