@@ -47,6 +47,7 @@ vendor/cache
 vendor/cache/*
 vendor/ruby
 /log
+/storage
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
